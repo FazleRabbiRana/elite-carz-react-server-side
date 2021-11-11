@@ -31,6 +31,14 @@ async function run() {
 			const cursor = await blogsCollection.find({}).toArray();
 			res.json(cursor);
 		});
+
+		// get single blog
+		app.get('/blogs/:id', async (req, res) => {
+			const id = req.params.id;
+			const filter = {_id: ObjectId(id)};
+			const result = await blogsCollection.findOne(filter);
+			res.json(result);
+		});
 	} catch {
 		// await client.close();
 	}
