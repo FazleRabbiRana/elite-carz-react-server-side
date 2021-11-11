@@ -1,6 +1,6 @@
 # Elite Carz | Car Shop Niche Website Server Side
 
-This is the Server-side for the Elite Carz React App. This server is deployed on Heroku.
+This is the Server-side for the Elite Carz React App. This server is deployed on Heroku.\
 The Client-side project is deployed on Firebase. [Live website link](https://elite-carz.web.app/)
 
 ## About This Project
@@ -27,8 +27,8 @@ This site is a Niche website (single product category selling website). So it ca
 
 ### `data`
 
-Data used from Dynamic backend server on [Heroku](#).\
-For example, here is the [blogs link](#) for this project.
+Data used from Dynamic backend server on [Heroku](https://sheltered-caverns-44637.herokuapp.com/).\
+For example, here is the [blogs link](https://sheltered-caverns-44637.herokuapp.com/blogs) for this project.
 
 ### `icons`
 
