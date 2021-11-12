@@ -16,9 +16,25 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 async function run() {
 	try {
 		await client.connect();
-		const database = client.db("eliteCarz_db");
-    const reviewsCollection = database.collection("reviews");
-    const blogsCollection = database.collection("blogs");
+		const database = client.db('eliteCarz_db');
+    const reviewsCollection = database.collection('reviews');
+    const blogsCollection = database.collection('blogs');
+		const productsCollection = database.collection('products');
+		const ordersCollection = database.collection('orders');
+
+		// get all products
+		app.get('/products', async (req, res) => {
+			const cursor = await productsCollection.find({}).toArray();
+			res.json(cursor);
+		});
+
+		// get single product
+		app.get('/products/:id', async (req, res) => {
+			const id = req.params.id;
+			const filter = {_id: ObjectId(id)};
+			const result = await productsCollection.findOne(filter);
+			res.json(result);
+		});
 
 		// get all reviews
 		app.get('/reviews', async (req, res) => {
