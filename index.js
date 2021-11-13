@@ -30,6 +30,20 @@ async function run() {
 			res.json(result);
 		});
 
+		// get all orders
+		app.get('/orders', async (req, res) => {
+			const cursor = await ordersCollection.find({}).toArray();
+			res.json(cursor);
+		});
+
+		// get single order
+		app.get('/orders/:id', async (req, res) => {
+			const id = req.params.id;
+			const filter = {_id: ObjectId(id)};
+			const result = await ordersCollection.findOne(filter);
+			res.json(result);
+		});
+
 		// get all products
 		app.get('/products', async (req, res) => {
 			const cursor = await productsCollection.find({}).toArray();
