@@ -35,7 +35,7 @@ async function run() {
 			let query = {};
 			const emailQuery = req.query.email;
 			if (emailQuery) {
-				query = {emal: emailQuery}
+				query = {email: emailQuery}
 			}
 			const cursor = ordersCollection.find(query);
 			const orders = await cursor.toArray();
