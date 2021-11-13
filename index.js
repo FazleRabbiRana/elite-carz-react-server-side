@@ -96,6 +96,12 @@ async function run() {
 			res.json({ admin: isAdmin });
 		});
 
+		// get all users
+		app.get('/users', async (req, res) => {
+			const cursor = await usersCollection.find({}).toArray();
+			res.json(cursor);
+		});
+
 		// get all reviews
 		app.get('/reviews', async (req, res) => {
 			const cursor = await reviewsCollection.find({}).toArray();
