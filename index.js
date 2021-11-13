@@ -58,6 +58,17 @@ async function run() {
 			res.json(result);
 		});
 
+		// update an order
+		app.put('/orders/:id', async (req, res) => {
+			const id = req.params.id;
+			const filter = {_id: ObjectId(id)};
+			const updatedProduct = req.body;
+			const options = { upsert: true };
+			const updateDoc = { $set: { status: updatedProduct.status } };
+			const result = await ordersCollection.updateOne(filter, updateDoc, options);
+			res.json(result);
+		});
+
 		// get all products
 		app.get('/products', async (req, res) => {
 			const cursor = await productsCollection.find({}).toArray();
@@ -69,6 +80,13 @@ async function run() {
 			const id = req.params.id;
 			const filter = {_id: ObjectId(id)};
 			const result = await productsCollection.findOne(filter);
+			res.json(result);
+		});
+
+		// add a new product
+		app.post('/products', async (req, res) => {
+			const product = req.body;
+			const result = await productsCollection.insertOne(product);
 			res.json(result);
 		});
 
@@ -120,6 +138,13 @@ async function run() {
 		app.get('/reviews', async (req, res) => {
 			const cursor = await reviewsCollection.find({}).toArray();
 			res.json(cursor);
+		});
+
+		// add a review
+		app.post('/reviews', async (req, res) => {
+			const review = req.body;
+			const result = await reviewsCollection.insertOne(review);
+			res.json(result);
 		});
 
 		// get all blogs
