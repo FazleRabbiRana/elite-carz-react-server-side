@@ -23,6 +23,13 @@ async function run() {
 		const productsCollection = database.collection('products');
 		const ordersCollection = database.collection('orders');
 
+		// add an order
+		app.post('/orders', async (req, res) => {
+			const order = req.body;
+			const result = await ordersCollection.insertOne(order);
+			res.json(result);
+		});
+
 		// get all products
 		app.get('/products', async (req, res) => {
 			const cursor = await productsCollection.find({}).toArray();
