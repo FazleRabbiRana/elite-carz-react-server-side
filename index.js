@@ -30,10 +30,16 @@ async function run() {
 			res.json(result);
 		});
 
-		// get all orders
+		// get all orders (with email query)
 		app.get('/orders', async (req, res) => {
-			const cursor = await ordersCollection.find({}).toArray();
-			res.json(cursor);
+			let query = {};
+			const emailQuery = req.query.email;
+			if (emailQuery) {
+				query = {emal: emailQuery}
+			}
+			const cursor = ordersCollection.find(query);
+			const orders = await cursor.toArray();
+			res.json(orders);
 		});
 
 		// get single order
