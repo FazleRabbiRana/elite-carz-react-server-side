@@ -65,7 +65,7 @@ async function run() {
 			res.json(result);
 		});
 
-		// update user (role)
+		// upsert (insert or update) an user
 		app.put('/users', async (req, res) => {
 			const user = req.body;
 			const filter = {email: user.email};
@@ -74,6 +74,15 @@ async function run() {
 			const result = await usersCollection.updateOne( filter, updateDoc, options);
 			res.json(result); 
 		});
+
+		// update user to admin role
+		app.put('/users/admin', async (req, res) => {
+			const user = req.body;
+			const filter = {email: user.email};
+			const updateDoc = {$set: {role: 'admin'}};
+			const result = await usersCollection.updateOne(filter, updateDoc);
+			res.json(result);
+		})
 
 		// check an user if admin
 		app.get('/users/:email', async (req, res) => {
