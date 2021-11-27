@@ -4,13 +4,12 @@
 	<img src="https://raw.githubusercontent.com/FazleRabbiRana/elite-carz-react-client-side/main/public/logo192.png" height="120" />
 </p>
 
-This is the Server-side repo for the Elite Carz React App. This server is hosted on Heroku.
+This is the Server-side repository for the Elite Carz React App. This server is hosted on Heroku.\
+For the client-side repository [click here](https://github.com/FazleRabbiRana/elite-carz-react-client-side).
 
 This is a Niche website (single product category selling website).\
-Live site deployed on Firebase. To visit the live website [click here](https://elite-carz.web.app/).\
+Live site is deployed on Firebase. To visit the live website [click here](https://elite-carz.web.app/).\
 To login as an Admin use `admin@admin.com` and `ASdf43!2` respectively for Username and Password.
-
-For the client-side repository [click here](https://github.com/FazleRabbiRana/elite-carz-react-client-side).
 
 ## About This Project
 
@@ -18,7 +17,7 @@ Here is a brief about this project:
 - Lightening fast :zap: smooth experience with ReactJS
 - Dynamic server-side hosted on Heroku
 - Interactive functional dashboard panel with API management for both admin and general user.
-- Contents, e.g. `orders`, `products`, `users` are completely managable from the dashboard.
+- Contents, e.g. `orders`, `products`, `users` are completely manageable from the dashboard.
 - Firebase secured multiple authentication system
 
 	![image](https://img.shields.io/badge/Email%20&%20Password-FFC905?style=for-the-badge) ![image](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white) ![image](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) ![image](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)
